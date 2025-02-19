@@ -23,12 +23,11 @@ $post_id = $_GET['post_id'];
 <body>
     <h2>Add a Comment</h2>
     
-<form method="POST" action="process_comment.php">
-    <label>Post ID (debug): <?= htmlspecialchars($post_id) ?></label><br>
-    <input type="hidden" name="post_id" value="<?= htmlspecialchars($post_id) ?>">
-    <textarea name="comment" placeholder="Write your comment..." required></textarea><br>
-    <button type="submit">Submit Comment</button>
-</form>
+    <form method="POST" action="process_comment.php">
+        <input type="hidden" name="post_id" value="<?= htmlspecialchars($post_id) ?>">
+        <textarea name="comment" placeholder="Write your comment..." required></textarea><br>
+        <button type="submit">Submit Comment</button>
+    </form>
 
     <a href="view_post.php?id=<?= htmlspecialchars($post_id) ?>">Back to Post</a>
 </body>

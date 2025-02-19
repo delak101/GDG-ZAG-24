@@ -7,10 +7,6 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    echo "<pre>";
-    print_r($_POST); // Show all received data
-    echo "</pre>";
-
     if (!isset($_POST['post_id']) || empty($_POST['post_id'])) {
         die("Error: Post ID is missing. <a href='index.php'>Go back</a>");
     }
@@ -23,17 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment_text = trim($_POST['comment']);
     $user_id = $_SESSION['user_id'];
 
-    echo "<p>Debug: post_id -> $post_id</p>";
-    echo "<p>Debug: comment -> $comment_text</p>";
-
-    // Insert into database
+    // Insert comment
     $stmt = $pdo->prepare("INSERT INTO comments (post_id, user_id, comment_text) VALUES (?, ?, ?)");
     if ($stmt->execute([$post_id, $user_id, $comment_text])) {
-        echo "<p>Comment added successfully!</p>";
+        header("Location: view_post.php?id=" . $post_id);
+        exit;
     } else {
-        echo "<p>Database insertion failed.</p>";
+        die("Database insertion failed.");
     }
-
-    exit;
 }
 ?>
