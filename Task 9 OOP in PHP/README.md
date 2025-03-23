@@ -110,6 +110,4 @@ $password = "";
 4. **Checkout** to place an order.
 5. **View your order history.**
 
----
-**Project by [Your Name / Team Name]**
 
