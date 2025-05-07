@@ -1,3 +1,29 @@
+# GDG-ZAG-24 - Task 11: Intro To Laravel Profile Viewer App
+
+## Description
+A Laravel application that displays profiles without using a database. All data is stored in an array within the controller.
+
+## Features
+- View list of all profiles at `/profiles`
+- View individual profile details at `/profiles/{id}`
+- No authentication required
+- No database used - all data is stored in the controller
+
+## How to Run
+1. Clone this repository
+2. Install dependencies: `composer install`
+3. Start the development server: `php artisan serve`
+4. Access the application at `http://127.0.0.1:8000`
+    - if you use different port number change `8000` to the port you use
+
+## Database Information
+This application does not use a database. All profile data is stored in an array within the ProfileController.
+
+## Routes
+- `/profiles` - List all profiles
+- `/profiles/{id}` - View a specific profile
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
